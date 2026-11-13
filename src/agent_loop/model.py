@@ -28,7 +28,8 @@ Block = dict[str, Any]
 # One tool definition in API wire format: {"name", "description", "input_schema"}.
 ToolSpec = dict[str, Any]
 
-DEFAULT_MAX_TOKENS = 16_000
+DEFAULT_MAX_TOKENS = 8_000  # per reply; the loop can raise it up to MAX_NON_STREAMING_TOKENS
+MAX_NON_STREAMING_TOKENS = 16_000  # above this, non-streaming calls risk HTTP timeouts
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
 
 
